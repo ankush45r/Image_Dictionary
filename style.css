@@ -1,0 +1,468 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(74, 74, 77);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* overflow: hidden; */
+}
+
+.slow-transition {
+    transition: all 0.5s ease-in-out;
+}
+
+.score--section{
+    background-color: rgb(235, 63, 91);
+    width: 10vw;
+    height: 5vh;
+    border-radius: 5px;
+    position: absolute;
+    top: 1.4vh;
+    left: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(77, 32, 77);
+}
+
+.search--score{
+    animation: score_animation 2s linear infinite;
+}
+
+.hide--history{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: blue;
+}
+
+.img--about{
+    width: 280px;
+    height: 200px;
+    margin: 20px;
+    border-radius: 20px;
+    border: 2px solid white;
+}
+
+.img--flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.related-img{
+    text-align: center;
+    color: yellow;
+    box-shadow: 2px 2px 5px rgb(230, 219, 219) ;
+    padding: 4px;
+    border-radius: 5px;
+    background-color: rgb(105, 102, 102);
+}
+.related--images h1{
+    animation: img_related 0.7s ease-in-out  infinite normal;
+}
+
+.image{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 4px solid white; */
+}
+
+.spinner{
+    border-radius: 100px;
+    /* transform: rotate(360); */
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    animation: spinner_animation 1s linear infinite;
+}
+
+.spin--container{
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    align-items: center;
+}
+
+.btn--hide{
+    margin-right: 10px;
+    height: 20px;
+    background-color: rgb(68, 27, 27);
+    color: white;
+    border: 0.5px solid white;
+    width: 50px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.word--pos{
+    background-color: orange;
+    text-align: center;
+    color: rgb(70, 58, 236);
+}
+
+.btn:hover{
+    background-color: rgb(148, 148, 233);
+}
+
+.btn--hover:hover{
+    scale: 1.1;
+    transition: 0.2s ease-in-out;
+}
+
+.transparent{
+    opacity: 0;
+}
+
+.input--data{
+    color: rgb(255, 255, 255);
+    /* font-family: 'Courier New', Courier, monospace; */
+}
+
+.history{
+    height: 100vh;
+    width: 200px;
+    background-color: lightblue;
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    transform: translate(200px,-10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.translate--history{
+    transform: translate(0px,-10px);
+    transition: 0.5s ease-in-out;
+}
+
+.history--container{
+    width: 90%;
+    height: 97%;
+    background-color: white;
+    border-radius: 5px;
+    overflow: scroll;
+}
+
+.history--container li{
+    list-style: none;
+    font-size: 20px;
+    cursor: pointer;
+    height: 30px;
+}
+
+.btn--delete{
+    height: 25px;
+    width: 50px;
+    background-color: rgb(46, 21, 10);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.hist--ctr--div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history--head{
+    text-align: center;
+    font-size: 25px;
+    background-color: blue;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+}
+
+.word--input--ctr{
+    width: 100%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    background-color: rgb(61, 59, 59);
+    margin-top: 0;
+}
+
+.about{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    background-color: rgb(190, 187, 187);
+}
+
+.word--input{
+    width: 500px;
+    height: 20px;
+    background-color: wheat;
+    height: 32px;
+    font-size: 25px;
+    border-radius: 10px;
+    color: blue;
+}
+
+.btn{
+    height: 35px;
+    width: 80px;
+    border-radius: 10px;
+    background-color: rgb(93, 108, 240);
+    cursor: pointer;
+    border: none;
+    margin-left: 16px;
+}
+
+.btn--animate{
+    animation: scaler 1s linear infinite;
+}
+
+/* words about section */
+
+.container h2{
+    height: 50px;
+    text-align: center;
+    font-size: 32px;
+    color: purple;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgb(146, 158, 158);
+    margin-bottom: 10px;
+    /* overflow: hidden; */
+}
+
+ul{
+    list-style: square;
+}
+
+ul li{
+    text-align: center;
+    list-style: none;
+}
+
+.data--list{
+    height: 40vh;
+    overflow: scroll;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.data--list::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+  }
+
+  .data--list::-webkit-scrollbar-thumb {
+    background-color: #000000; /* Color of the scrollbar thumb */
+  }
+
+  .history--container::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+  }
+
+  .history--container::-webkit-scrollbar-thumb {
+    background-color: #000000; /* Color of the scrollbar thumb */
+  }
+
+
+.word--about--ctr{
+    width: 100%;
+    height: 60vh;
+    /* background-color: purple; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.white{
+    background-color: white;
+}
+
+.grey{
+    background-color: rgb(173, 170, 170);
+}
+
+.about{
+    width: 30%;
+    height: 90%;
+    font-size: 25px;
+    margin-left: 20px;
+    border-radius: 10px;
+    background-color: rgb(90, 90, 88);
+    margin: 10px;
+    color: brown;
+    box-shadow: 3px 2px 3px rgb(34, 33, 33) ;
+    /* animation: about_animation 2s linear infinite; */
+    /* overflow: scroll; */
+}
+
+@keyframes scaler {
+    0%{
+        scale: 1;
+        background-color: rgb(163, 163, 241);
+    }
+    25%{
+        /* scale: 1.05; */
+        background-color: rgb(89, 89, 243);
+    }
+    75%{
+        /* scale: 1.05; */
+        background-color: rgb(47, 47, 240);
+    }
+    100%{
+        scale: 1;
+        background-color: rgb(104, 104, 233);
+    }
+
+
+
+}
+
+@keyframes about_animation {
+    0%{
+        background-color: rgb(230, 230, 178);;
+    }
+    20%{
+        background-color: rgb(228, 228, 189);;
+    }
+    40%{
+        background-color: rgb(224, 224, 166);;
+    }
+    60%{
+        background-color: rgb(233, 233, 175);;
+    }
+    80%{
+        background-color: rgb(228, 228, 175);;
+    }
+    100%{
+        background-color: rgb(224, 224, 163);;
+    }
+}
+
+@keyframes spinner_animation {
+    0%{
+        transform: rotate(-360deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes score_animation {
+    0%{
+        color: rgb(15, 15, 15);
+    }
+    50%{
+        color: rgb(255, 255, 255);
+    }
+}
+
+@keyframes img_related {
+    0%{
+        color: rgb(230, 230, 87);;
+    }
+    20%{
+        color: rgb(228, 228, 189);;
+    }
+    40%{
+        color: rgb(145, 145, 130);;
+    }
+    60%{
+        color: rgb(121, 121, 114);;
+    }
+    80%{
+        color: rgb(65, 65, 9);;
+    }
+    100%{
+        color: rgb(199, 199, 58);;
+    }
+}
+
+@media screen and (max-width:700px){
+    .container{
+        width: 100vw;
+    }
+
+    .word--input--ctr{
+        margin-top: 0;
+        background-color: rgb(61, 59, 59);
+        width: 100%;
+        height: 64px;
+    }
+    .form--submit{
+        display: flex;
+    }
+    .form--submit input{
+        width: 50vw;
+        margin-left: 0.5vw;
+        font-size: 4vw;
+    }
+
+    .word--input--ctr{
+        display: flex;
+    }
+
+    .score--section{
+        left: 2px;
+        height: 35px;
+        font-size: 4vw;
+        width: 40vw;
+        margin: auto;
+        position: relative;
+        border-radius: 10px;
+        background-color: rgb(0, 255, 242);
+        margin-bottom: 10px;
+    }
+
+    .btn{
+        width: 16vw;
+        margin-right: 1vw;
+    }
+
+    .history{
+        z-index: 5;
+        top: 132px;
+    }
+
+    .word--about--ctr{
+        flex-direction: column;
+        width: 98vw;
+        justify-content: center;
+        align-items: center;
+        overflow: scroll;
+        height: auto;
+    }
+
+    .about{
+        width: 90vw;
+    }
+
+    .image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    .img--ctr img{
+        display: inline-block;
+        width: 37vw;
+        height: 110px;
+        flex-shrink: 0;
+
+    }
+
+}
+

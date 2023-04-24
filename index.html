@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+          Image Dictionary
+        </title>
+        <link rel="icon" type="images/x-icon" href="https://th.bing.com/th/id/OIP.Hr4-OEBqiQYSHJdp5ircPgHaHa?w=211&h=211&c=7&r=0&o=5&pid=1.7" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="history">
+            <div class="history--container">
+                <div class="hide--history">
+                    <h3 class="history--head">History</h3>
+                    <button class="btn--hide">Hide</button>
+                </div>
+                <ul class="history--data">
+                    <!-- <div class="spinner">
+          <svg>
+            <use href="src/img/icons.svg#icon-loader"></use>
+          </svg>
+        </div> -->
+                </ul>
+            </div>
+        </div>
+        <div class="word--input--ctr">
+    
+            <form class="form--submit" >
+            <input class="word--input" id="input--1" type="text" placeholder="Enter word for Search" spellcheck="true">
+            <button class="button--mic btn btn--hover" type="submit">Search</button>
+            </form>
+            <button class="button--history btn btn--animate">History</button>
+        </div>
+        <div class="score--section">
+            <strong>Search Score :: <strong class="search--score">0</strong></strong>
+        </div>
+        <div class="word--about--ctr">
+            <div class="word--def-ctr about">
+                <div>
+                    <h2>Definition<strong class="input--data"></strong> <button
+                            class="btn--delete btn--audio transparent">Audio</button></h2>
+                    <p class="word--pos"></p>
+                    <ul class="def--list data--list">
+                        <!-- <div class="spin--container">
+                            <img src="spinner2.jpg" alt="" class="spinner">
+                        </div> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="word--syno-ctr about">
+                <div>
+                    <h2>Synonyms<strong class="input--data"></strong></h2>
+                    <ul class="syno--list data--list">
+                        <!-- <div class="spin--container">
+                            <img src="spinner2.jpg" alt="" class="spinner">
+                        </div> -->
+                        <!-- <li class="syno">syno</li>
+                        <li class="syno">syno</li>
+                        <li class="syno">syno</li>
+                        <li class="syno">syno</li>
+                        <li class="syno">syno</li> -->
+                    </ul>
+                </div>
+            </div>
+            <div class="word--anto--ctr about">
+                <div>
+                    <h2>Antonyms<strong class="input--data"></strong></h2>
+                    <ul class="anto--list data--list">
+                        <!-- <div class="spin--container">
+                            <img src="spinner2.jpg" alt="" class="spinner">
+                        </div> -->
+                        <!-- <li class="anto">anto</li>
+                        <li class="anto">anto</li>
+                        <li class="anto">anto</li>
+                        <li class="anto">anto</li>
+                        <li class="anto">anto</li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="related--images">
+    </div>
+    <div class="image">
+        <div class="img--ctr">
+        
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.11.0/dist/tf.min.js"></script>
+    <script type="module" src="javascript.js"></script>
+    <!-- <script type="module" src="ola_uber.js"></script> -->
+    <!-- <script src="ola_uber.js"></script> -->
+</body>
+
+</html>
