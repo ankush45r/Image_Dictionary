@@ -69,9 +69,6 @@ let current_word;
 //     }
 //   }
 // }
-
-
-
 // import { correct } from "./speelchecker";
 
 // input_1.value='hello.'
@@ -113,10 +110,6 @@ const wordSearch = async (query) => {
         el.innerText = `(${query})`;
     })
     let data;
-    console.log('query=>' + query);
-    data = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${query}`);
-    // let data2 = await fetch(`https://seller.flipkart.com/products`);
-    // data2= data.json();
     try{
         data = await Promise.race([fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${query}`),timeout(3.2)]);
         if(!data.ok){
@@ -132,7 +125,6 @@ const wordSearch = async (query) => {
     catch(e){
         
     }
-    // console.log(data2);
 
     // image api
     let data_image = await fetch(`https://pixabay.com/api/?key=35613608-b1975027d3434275325f55c58&q=${query}&image_type=photo`)
@@ -145,7 +137,6 @@ const wordSearch = async (query) => {
     console.log(match);
     if (match > -1) {
         history_search.splice(match, 1);
-
     }
     else {
         search_score++;
@@ -155,17 +146,10 @@ const wordSearch = async (query) => {
     history_search.push(query);
     localStorage.setItem('words', JSON.stringify(history_search));
     render_history()
-    // def_list.insertAdjacentHTML('beforeend', spinner_element);
-    // syno_list.insertAdjacentHTML('beforeend', spinner_element);
-    // anto_list.insertAdjacentHTML('beforeend', spinner_element);
     localStorage.setItem('words', JSON.stringify(history_search));
-    // setTimeout(()=>{
     render(data[0]);
     render_img(data_image);
-    // },2000);
 }
-
-// wordSearch(new String(input_1.value).toLowerCase().slice(1));
 
 const render = (data) => {
     current_word = null;
@@ -252,55 +236,12 @@ const render_history = () => {
         }
         else divelement.classList.add('white');
         hist_data.insertAdjacentElement('afterbegin', divelement);
-
     })
 }
 
 btn_audio.addEventListener('click', () => {
     current_word.play();
 })
-
-
-
-
-
-
-
-
-//...................................................................................
-// Check if the Web Speech API is available in the current browser
-// if ('webkitSpeechRecognition' in window) {
-//     // Create a new instance of the speech recognition object
-//     console.log('yes')
-//     const recognition = new webkitSpeechRecognition();
-
-//     // Set the language for recognition (e.g., 'en-US' for English in the United States)
-//     recognition.lang = 'en-US';
-
-//     // Start the recognition process
-//     recognition.start();
-
-//     // Add an event listener for when speech is recognized
-//     recognition.addEventListener('result', (event) => {
-//       // Get the recognized text from the event
-//       let transcript = event.results[0][0].transcript;
-
-//       // Display the recognized text
-//     //   console.log(`You said: ${transcript}`);
-//     });
-
-//     // Add an event listener for when the recognition process ends
-//     recognition.addEventListener('end', () => {
-//       // Restart the recognition process after a short delay
-//       setTimeout(() => {
-//         recognition.start();
-//       }, 1000);
-//     });
-//   } else {
-//     // Web Speech API is not supported
-//     console.log('Speech recognition is not supported in this browser.');
-//   }
-// .....................................................................................
 
 const speechRecog = () => {
     if ('webkitSpeechRecognition' in window) {
@@ -341,95 +282,31 @@ const speechRecog = () => {
     }
 }
 
-// btn_mic.addEventListener('click', (e) => {
-//     searched_from = 'search';
-//     // input_1.value = correctspelling(input_1.value);
-//     wordSearch(input_1.value);
-// })
-
 form_sub.addEventListener('submit', (e) => {
     e.preventDefault();
     searched_from = 'search';
-    // input_1.value = correctspelling(input_1.value);
     wordSearch(input_1.value);
 })
-
-
 btn_history.addEventListener('click', () => {
     hist_ctr.classList.toggle('translate--history');
-    // hist_ctr.classList.toggle('translate--history--again');
     render_history();
 })
-
 btn_hide.addEventListener('click', () => {
     hist_ctr.classList.toggle('translate--history');
 })
-
 hist_data.addEventListener('click', (e) => {
-    // console.log(e.target);
     if (e.target.style.value == 'history') {
         searched_from = 'history';
         input_1.value = e.target.innerText;
         wordSearch(e.target.innerText);
     }
     else {
-        // console.log(e.target);
         let index = (e.target.style.value);
         console.log(index)
         history_search.splice(index, 1);
-        // console.log(e.target.value)
         localStorage.setItem('words', JSON.stringify(history_search));
         console.log(history_search)
         render_history();
     }
 
 })
-
-// document.addEventListener('click',()=>{
-//     hist_ctr.classList.remove('translate--history');
-// })
-
-// conversion of english to hindi
-
-// Load the pre-trained model
-// const MODEL_URL = 'https://storage.googleapis.com/tfjs-models/tfjs/translation_en_hi_v1/model.json';
-// const MAX_LENGTH = 30;
-
-// async function loadModel() {
-//   const model = await tf.loadLayersModel(MODEL_URL);
-//   const encoderModel = tf.model({inputs: model.inputs.slice(0, 1), outputs: model.layers[0].output});
-//   const decoderModel = tf.model({inputs: [model.inputs[1], model.inputs[2], model.layers[0].output], outputs: model.outputs[0]});
-//   return {model, encoderModel, decoderModel};
-// }
-
-// Convert English to Hindi
-// async function translate(inputText) {
-//   const {model, encoderModel, decoderModel} = await loadModel();
-
-//   const inputSequence = tokenizer.textsToSequences([inputText])[0];
-//   const inputTensor = tf.pad(tf.tensor2d([inputSequence], [1, inputSequence.length]), [[0, 0], [0, MAX_LENGTH - inputSequence.length]]);
-
-//   let states = encoderModel.predict(inputTensor);
-
-//   let targetSequence = tf.tensor2d([tokenizer.wordIndex['<start>']], [1, 1]);
-//   let outputSequence = '';
-
-//   while (outputSequence === '' || outputSequence.charAt(outputSequence.length - 1) !== '<end>' && outputSequence.length < MAX_LENGTH) {
-//     const decoderOutput = decoderModel.predict([targetSequence, states[0], states[1]]);
-//     const outputIndex = decoderOutput.argMax(axis=-1).dataSync()[0];
-//     outputSequence += tokenizer.indexWord[outputIndex] + ' ';
-//     targetSequence = tf.tensor2d([outputIndex], [1, 1]);
-
-//     states = [decoderOutput.states[0], decoderOutput.states[1]];
-//   }
-
-//   return await outputSequence.trim().replace(/<start>/g, '').replace(/<end>/g, '');
-// }
-
-// // Example usage
-// const inputText = 'Where are you going';
-// const outputText =  translate(inputText);
-// console.log(outputText); // Output: नमस्ते, आप कैसे हैं?
-
-
-// console.log(correct('helllo'))
