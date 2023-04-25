@@ -30,6 +30,12 @@ body{
     color: rgb(77, 32, 77);
 }
 
+.form--submit{
+    display: flex;
+    justify--content: center;
+    align--items: center;
+}
+
 .search--score{
     animation: score_animation 2s linear infinite;
 }
