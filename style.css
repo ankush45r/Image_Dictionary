@@ -267,6 +267,7 @@ body{
     border-top-right-radius: 10px;
     background-color: rgb(146, 158, 158);
     margin-bottom: 10px;
+    width: 100%;
 /*     overflow-x: scroll; */
 }
 
