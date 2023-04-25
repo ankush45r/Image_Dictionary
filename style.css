@@ -28,6 +28,7 @@ body{
     font-size: 16px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: rgb(77, 32, 77);
+    padding: 0px 4px;
 }
 
 .form--submit{
