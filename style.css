@@ -142,7 +142,7 @@ body{
 
 .input--data{
     color: rgb(255, 255, 255);
-    font-size: 10px;
+    font-size: 20px;
     /* font-family: 'Courier New', Courier, monospace; */
 }
 
@@ -262,12 +262,11 @@ body{
 
 .container h2{
     text-align: center;
-    font-size: 32px;
+    font-size: 30px;
     color: purple;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     background-color: rgb(146, 158, 158);
-    margin-bottom: 10px;
     width: 100%;
 /*     overflow-x: scroll; */
 }
